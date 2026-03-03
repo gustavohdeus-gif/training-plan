@@ -11,10 +11,10 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
-        <Link href="/" className="flex items-center gap-2" aria-label="Plano Slim360 - Ir para a home">
+        <Link href="/" className="flex items-center gap-2" aria-label="Plano Estética em Forma - Ir para a home">
           <Leaf className="size-7 text-primary" />
           <span className="font-serif text-lg font-bold text-foreground">
-            Plano Slim360
+            Plano Estética em Forma
           </span>
         </Link>
 
