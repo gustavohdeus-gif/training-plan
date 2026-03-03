@@ -5,9 +5,9 @@ import { AssessmentForm } from "@/components/assessment-form"
 import { ShieldCheck } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Avaliacao Gratuita — Plano Slim360",
+  title: "Avaliação — Plano Estética em Forma",
   description:
-    "Faca sua avaliacao gratuita e descubra o plano ideal de treinos e dietas para o seu perfil. Rapido, seguro e online.",
+    "Faca sua avaliação gratuita e descubra o plano ideal de treinos e dietas para o seu perfil. Rápido, seguro e online.",
 }
 
 export default function AvaliacaoPage() {
@@ -18,13 +18,13 @@ export default function AvaliacaoPage() {
         <div className="mx-auto max-w-2xl px-4">
           <div className="mb-8 text-center">
             <span className="inline-block text-xs font-semibold uppercase tracking-widest text-primary">
-              Avaliacao gratuita
+              Avaliação
             </span>
             <h1 className="mt-2 font-serif text-2xl font-bold text-foreground md:text-4xl text-balance">
               Descubra o plano ideal para voce
             </h1>
             <p className="mt-3 text-muted-foreground leading-relaxed">
-              Responda as perguntas abaixo para receber orientacoes personalizadas e garantir seu Plano de Treino.
+              Responda as perguntas abaixo para receber orientações personalizadas e garantir seu Plano de Treino.
             </p>
           </div>
 
