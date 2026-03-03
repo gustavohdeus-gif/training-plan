@@ -240,10 +240,12 @@ export function AssessmentForm() {
           className="flex flex-col gap-3"
         >
           {[
-            { value: "emagrecimento", label: "Emagrecimento" },
-            { value: "definicao", label: "Definicao e hipertrofia" },
-            { value: "saude", label: "Saude e bem-estar" },
-          ].map((option) => (
+  { value: "perder-gordura", label: "Perder gordura" },
+  { value: "ganhar-massa", label: "Ganhar massa muscular" },
+  { value: "definir-corpo", label: "Definir o corpo" },
+  { value: "ganhar-forca", label: "Ganhar força" },
+  { value: "condicionamento", label: "Melhorar condicionamento" },
+].map((option) => (
             <div key={option.value} className="flex items-center gap-3">
               <RadioGroupItem value={option.value} id={`meta-${option.value}`} />
               <Label htmlFor={`meta-${option.value}`} className="cursor-pointer font-normal">
