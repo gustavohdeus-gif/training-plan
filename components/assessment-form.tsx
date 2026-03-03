@@ -45,6 +45,10 @@ const assessmentSchema = z.object({
   tempoTreino: z.string().min(1, "Selecione uma opção"),
   localTreino: z.string().min(1, "Selecione uma opção"),
   meta: z.string().min(1, "Selecione sua meta"),
+  alimentacao: z.string().min(1, "Selecione uma opção"),
+  condicaoMedica: z.array(z.string()).min(1, "Selecione ao menos uma opção"),
+  condicaoMedicaOutra: z.string().optional(),
+  prioridadeCorpo: z.array(z.string()).min(1, "Selecione ao menos uma opção"),
   aceitaTermos: z.literal(true, {
     errorMap: () => ({ message: "Você precisa aceitar os termos" }),
   }),
@@ -72,6 +76,10 @@ export function AssessmentForm() {
       tempoTreino: "",
       localTreino: "",
       meta: "",
+      alimentacao: "",
+      condicaoMedica: [],
+      condicaoMedicaOutra: "",
+      prioridadeCorpo: [],
       aceitaTermos: undefined,
       aceitaEmails: false,
     },
@@ -79,6 +87,8 @@ export function AssessmentForm() {
 
   const aceitaTermos = watch("aceitaTermos")
   const aceitaEmails = watch("aceitaEmails")
+  const condicaoMedica = watch("condicaoMedica")
+  const prioridadeCorpo = watch("prioridadeCorpo")
 
   async function onSubmit(data: AssessmentFormData) {
     setIsSubmitting(true)
@@ -240,11 +250,11 @@ export function AssessmentForm() {
           className="flex flex-col gap-3"
         >
           {[
-            { value: "perder-gordura",   label: "Perder gordura" },
-            { value: "ganhar-massa",     label: "Ganhar massa muscular" },
-            { value: "definir-corpo",    label: "Definir o corpo" },
-            { value: "ganhar-forca",     label: "Ganhar força" },
-            { value: "condicionamento",  label: "Melhorar condicionamento" },
+            { value: "perder-gordura",  label: "Perder gordura" },
+            { value: "ganhar-massa",    label: "Ganhar massa muscular" },
+            { value: "definir-corpo",   label: "Definir o corpo" },
+            { value: "ganhar-forca",    label: "Ganhar força" },
+            { value: "condicionamento", label: "Melhorar condicionamento" },
           ].map((option) => (
             <div key={option.value} className="flex items-center gap-3">
               <RadioGroupItem value={option.value} id={`meta-${option.value}`} />
@@ -256,6 +266,125 @@ export function AssessmentForm() {
         </RadioGroup>
         {errors.meta && (
           <p className="text-sm text-destructive">{errors.meta.message}</p>
+        )}
+      </div>
+
+      {/* Alimentação */}
+      <div className="flex flex-col gap-3">
+        <Label>Como você considera sua alimentação hoje? *</Label>
+        <RadioGroup
+          onValueChange={(val) => setValue("alimentacao", val, { shouldValidate: true })}
+          className="flex flex-col gap-3"
+        >
+          {[
+            { value: "muito-desorganizada", label: "Muito desorganizada" },
+            { value: "mais-ou-menos",       label: "Mais ou menos" },
+            { value: "ja-sigo-dieta",       label: "Já sigo uma dieta" },
+          ].map((option) => (
+            <div key={option.value} className="flex items-center gap-3">
+              <RadioGroupItem value={option.value} id={`alimentacao-${option.value}`} />
+              <Label htmlFor={`alimentacao-${option.value}`} className="cursor-pointer font-normal">
+                {option.label}
+              </Label>
+            </div>
+          ))}
+        </RadioGroup>
+        {errors.alimentacao && (
+          <p className="text-sm text-destructive">{errors.alimentacao.message}</p>
+        )}
+      </div>
+
+      {/* Condição médica */}
+      <div className="flex flex-col gap-3">
+        <Label>Possui alguma condição médica? *</Label>
+        <div className="flex flex-col gap-3">
+          {[
+            { value: "hipertensao",         label: "Hipertensão" },
+            { value: "diabetes",            label: "Diabetes" },
+            { value: "problemas-cardiacos", label: "Problemas cardíacos" },
+            { value: "nenhuma",             label: "Nenhuma" },
+          ].map((option) => (
+            <div key={option.value} className="flex items-center gap-3">
+              <Checkbox
+                id={`condicao-${option.value}`}
+                checked={condicaoMedica.includes(option.value)}
+                onCheckedChange={(checked) => {
+                  const atual = condicaoMedica ?? []
+                  const novo = checked
+                    ? [...atual, option.value]
+                    : atual.filter((v) => v !== option.value)
+                  setValue("condicaoMedica", novo, { shouldValidate: true })
+                }}
+              />
+              <Label htmlFor={`condicao-${option.value}`} className="cursor-pointer font-normal">
+                {option.label}
+              </Label>
+            </div>
+          ))}
+
+          {/* Outra — com campo aberto */}
+          <div className="flex items-center gap-3">
+            <Checkbox
+              id="condicao-outra"
+              checked={condicaoMedica.includes("outra")}
+              onCheckedChange={(checked) => {
+                const atual = condicaoMedica ?? []
+                const novo = checked
+                  ? [...atual, "outra"]
+                  : atual.filter((v) => v !== "outra")
+                setValue("condicaoMedica", novo, { shouldValidate: true })
+                if (!checked) setValue("condicaoMedicaOutra", "")
+              }}
+            />
+            <Label htmlFor="condicao-outra" className="cursor-pointer font-normal">
+              Outra
+            </Label>
+          </div>
+
+          {condicaoMedica.includes("outra") && (
+            <Input
+              placeholder="Descreva sua condição..."
+              {...register("condicaoMedicaOutra")}
+              className="mt-1"
+            />
+          )}
+        </div>
+        {errors.condicaoMedica && (
+          <p className="text-sm text-destructive">{errors.condicaoMedica.message}</p>
+        )}
+      </div>
+
+      {/* Prioridade do corpo */}
+      <div className="flex flex-col gap-3">
+        <Label>Qual parte do corpo você quer priorizar? *</Label>
+        <div className="flex flex-col gap-3">
+          {[
+            { value: "pernas-gluteos", label: "Pernas e glúteos" },
+            { value: "abdomen",        label: "Abdômen" },
+            { value: "bracos",         label: "Braços" },
+            { value: "costas",         label: "Costas" },
+            { value: "corpo-todo",     label: "Corpo todo" },
+          ].map((option) => (
+            <div key={option.value} className="flex items-center gap-3">
+              <Checkbox
+                id={`prioridade-${option.value}`}
+                checked={prioridadeCorpo.includes(option.value)}
+                onCheckedChange={(checked) => {
+                  const atual = prioridadeCorpo ?? []
+                  const novo = checked
+                    ? [...atual, option.value]
+                    : atual.filter((v) => v !== option.value)
+                  setValue("prioridadeCorpo", novo, { shouldValidate: true })
+                }}
+              />
+              <Label htmlFor={`prioridade-${option.value}`} className="cursor-pointer font-normal">
+                {option.label}
+              </Label>
+            </div>
+          ))}
+        </div>
+        {errors.prioridadeCorpo && (
+          <p className="text-sm text-destructive">{errors.prioridadeCorpo.message}</p>
         )}
       </div>
 
