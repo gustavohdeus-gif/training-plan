@@ -7,7 +7,7 @@ import { ShieldCheck } from "lucide-react"
 export const metadata: Metadata = {
   title: "Avaliação — Plano Estética em Forma",
   description:
-    "Faça sua avaliação gratuita e descubra o plano ideal de treinos e dietas para o seu perfil. Rápido, seguro e online.",
+    "Faça sua avaliação e descubra o plano ideal de treinos e dietas para o seu perfil. Rápido, seguro e online.",
 }
 
 export default function AvaliacaoPage() {
