@@ -21,7 +21,7 @@ export default function AvaliacaoPage() {
               Avaliação
             </span>
             <h1 className="mt-2 font-serif text-2xl font-bold text-foreground md:text-4xl text-balance">
-              Descubra o plano ideal para você
+              DESCUBRA O PLANO IDEAL PRA VOCÊ
             </h1>
             <p className="mt-3 text-muted-foreground leading-relaxed">
               Responda as perguntas abaixo para receber orientações personalizadas e garantir seu Plano de Treino.
