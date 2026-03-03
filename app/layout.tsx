@@ -6,21 +6,21 @@ const _inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const _montserrat = Montserrat({ subsets: ['latin'], variable: '--font-montserrat' })
 
 export const metadata: Metadata = {
-  title: 'Plano Slim360 — Emagreça com Treinos e Dietas',
+  title: 'Estética em Forma — Emagreça em 30 DIAS',
   description:
-    'Adquira o Plano de Treino Slim360 e siga um passo a passo simples para perder peso com seguranca e constancia. Treinos e dietas para sua rotina.',
+    'Adquira o Plano de Treino Estética em Forma e siga um passo a passo simples para perder peso com segurançaa e constância. Treinos e dietas para sua rotina.',
   openGraph: {
-    title: 'Plano Slim360 — Emagreça com Treinos e Dietas',
+    title: 'Plano Estética em Forma — Emagreça em 30 DIAS',
     description:
-      'Adquira o Plano de Treino Slim360 e siga um passo a passo simples para perder peso com seguranca e constancia.',
+      'Adquira o Plano de Treino Estética em Forma e siga um passo a passo simples para perder peso com seguranca e constancia.',
     type: 'website',
     locale: 'pt_BR',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Plano Slim360 — Emagreça com Treinos e Dietas',
+    title: 'Plano Estética em Forma — Emagreça em 30 DIAS',
     description:
-      'Adquira o Plano de Treino Slim360 e siga um passo a passo simples para perder peso com seguranca e constancia.',
+      'Adquira o Plano de Treino Estética em Forma e siga um passo a passo simples para perder peso com seguranca e constancia.',
   },
 }
 
