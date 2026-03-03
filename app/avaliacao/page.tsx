@@ -7,7 +7,7 @@ import { ShieldCheck } from "lucide-react"
 export const metadata: Metadata = {
   title: "Avaliação — Plano Estética em Forma",
   description:
-    "Faca sua avaliação gratuita e descubra o plano ideal de treinos e dietas para o seu perfil. Rápido, seguro e online.",
+    "Faça sua avaliação gratuita e descubra o plano ideal de treinos e dietas para o seu perfil. Rápido, seguro e online.",
 }
 
 export default function AvaliacaoPage() {
@@ -21,7 +21,7 @@ export default function AvaliacaoPage() {
               Avaliação
             </span>
             <h1 className="mt-2 font-serif text-2xl font-bold text-foreground md:text-4xl text-balance">
-              Descubra o plano ideal para voce
+              Descubra o plano ideal para você
             </h1>
             <p className="mt-3 text-muted-foreground leading-relaxed">
               Responda as perguntas abaixo para receber orientações personalizadas e garantir seu Plano de Treino.
@@ -34,7 +34,7 @@ export default function AvaliacaoPage() {
 
           <div className="mt-6 flex items-center justify-center gap-2 text-xs text-muted-foreground">
             <ShieldCheck className="size-4" />
-            <span>Seus dados estao seguros e protegidos conforme a LGPD.</span>
+            <span>Seus dados estão seguros e protegidos conforme a LGPD.</span>
           </div>
         </div>
       </main>
