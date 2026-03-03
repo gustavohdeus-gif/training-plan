@@ -9,10 +9,10 @@ export function SiteFooter() {
           <div className="flex flex-col gap-3">
             <div className="flex items-center gap-2">
               <Leaf className="size-6 text-primary" />
-              <span className="font-serif text-lg font-bold">Plano Slim360</span>
+              <span className="font-serif text-lg font-bold">Plano Estética em Forma</span>
             </div>
             <p className="text-sm text-secondary-foreground/70 leading-relaxed">
-              Um plano simples e eficiente para emagrecer com treinos e dietas que cabem na sua rotina.
+              Um plano completo e eficiente para emagrecer com treinos e dietas que cabem na sua rotina.
             </p>
           </div>
 
@@ -58,11 +58,11 @@ export function SiteFooter() {
 
         <div className="mt-10 border-t border-secondary-foreground/10 pt-6">
           <p className="text-center text-xs leading-relaxed text-secondary-foreground/50">
-            Este material e educativo e nao substitui orientacao medica. Resultados variam conforme biotipo, rotina e adesao.
-            Consulte um profissional de saude se tiver condicoes pre-existentes.
+            Este material é educativo e não substitui orientação médica. Os resultados variam conforme biotipo, rotina e adesão.
+            Consulte um profissional de saúde se tiver condições pré-existentes.
           </p>
           <p className="mt-2 text-center text-xs text-secondary-foreground/40">
-            &copy; {new Date().getFullYear()} Plano Slim360. Todos os direitos reservados.
+            &copy; {new Date().getFullYear()} Plano Estética em Forma. Todos os direitos reservados.
           </p>
         </div>
       </div>
