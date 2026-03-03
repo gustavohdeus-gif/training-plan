@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 }
 
 const CHECKOUT_URL = "#"
-const PRECO = "R$ 47,00"
+const PRECO = "R$ 19,90"
 
 export default function PagamentoPage() {
   return (
@@ -36,7 +36,7 @@ export default function PagamentoPage() {
               Ultimo passo
             </span>
             <h1 className="mt-2 font-serif text-2xl font-bold text-foreground md:text-4xl text-balance">
-              Finalize a compra do Plano de Treino Slim360
+              Finalize a compra do Plano de Treino Estética em Forma
             </h1>
           </div>
 
@@ -48,10 +48,10 @@ export default function PagamentoPage() {
               </h2>
               <div className="mt-4 flex flex-col gap-3">
                 {[
-                  { icon: BookOpen, text: "Plano de Treino completo (PDF) com mais de 100 paginas" },
+                  { icon: BookOpen, text: "Plano de Treino completo (PDF) " },
                   { icon: Table2, text: "Planilhas de treino semana a semana" },
-                  { icon: Apple, text: "Sugestoes de dieta com substituicoes" },
-                  { icon: Gift, text: "Bonus: Checklist de compras e planejamento" },
+                  { icon: Apple, text: "Sugestões de dieta com substituições" },
+                  { icon: Gift, text: "Bônus: Checklist de compras e planejamento" },
                 ].map((item) => (
                   <div key={item.text} className="flex items-center gap-3">
                     <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary/10">
@@ -104,15 +104,15 @@ export default function PagamentoPage() {
               {[
                 {
                   q: "Quais formas de pagamento sao aceitas?",
-                  a: "Aceitamos cartao de credito, PIX e boleto bancario.",
+                  a: "Aceitamos Cartão de Crédito, PIX e Boleto Bancário.",
                 },
                 {
                   q: "Como recebo o Plano de Treino?",
-                  a: "Apos a confirmacao do pagamento, voce recebe o Plano de Treino por e-mail em ate 5 minutos.",
+                  a: "Apos a confirmação do pagamento, você recebe o Plano de Treino por e-mail em até 5 minutos.",
                 },
                 {
                   q: "Posso pedir reembolso?",
-                  a: "Sim. Voce tem 7 dias de garantia incondicional para solicitar reembolso total.",
+                  a: "Sim. Voce tem 7 dias de garantia para solicitar reembolso total.",
                 },
               ].map((item) => (
                 <div key={item.q}>
