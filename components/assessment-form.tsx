@@ -21,7 +21,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { ArrowLeft, Loader2 } from "lucide-react"
 
 const assessmentSchema = z.object({
-  email: z.string().email("Insira um e-mail valido"),
+  email: z.string().email("Insira um e-mail válido"),
   nome: z
     .string()
     .min(3, "Insira seu nome completo")
@@ -30,23 +30,23 @@ const assessmentSchema = z.object({
       "Insira nome e sobrenome"
     ),
   idade: z.coerce
-    .number({ invalid_type_error: "Insira um numero valido" })
-    .int("Insira um numero inteiro")
-    .min(16, "Idade minima: 16 anos")
-    .max(90, "Idade maxima: 90 anos"),
+    .number({ invalid_type_error: "Insira um número válido" })
+    .int("Insira um número inteiro")
+    .min(16, "Idade mínima: 16 anos")
+    .max(90, "Idade máxima: 90 anos"),
   peso: z.coerce
-    .number({ invalid_type_error: "Insira um numero valido" })
-    .min(30, "Peso minimo: 30 kg")
-    .max(300, "Peso maximo: 300 kg"),
+    .number({ invalid_type_error: "Insira um número válido" })
+    .min(30, "Peso mínimo: 30 kg")
+    .max(300, "Peso máximo: 300 kg"),
   altura: z.coerce
-    .number({ invalid_type_error: "Insira um numero valido" })
-    .min(120, "Altura minima: 120 cm")
-    .max(220, "Altura maxima: 220 cm"),
-  tempoTreino: z.string().min(1, "Selecione uma opcao"),
-  localTreino: z.string().min(1, "Selecione uma opcao"),
+    .number({ invalid_type_error: "Insira um número válido" })
+    .min(120, "Altura mínima: 120 cm")
+    .max(220, "Altura máxima: 220 cm"),
+  tempoTreino: z.string().min(1, "Selecione uma opção"),
+  localTreino: z.string().min(1, "Selecione uma opção"),
   meta: z.string().min(1, "Selecione sua meta"),
   aceitaTermos: z.literal(true, {
-    errorMap: () => ({ message: "Voce precisa aceitar os termos" }),
+    errorMap: () => ({ message: "Você precisa aceitar os termos" }),
   }),
   aceitaEmails: z.boolean().optional(),
 })
@@ -92,12 +92,12 @@ export function AssessmentForm() {
       })
 
       if (!res.ok) {
-        throw new Error("Erro ao enviar avaliacao. Tente novamente.")
+        throw new Error("Erro ao enviar avaliação. Tente novamente.")
       }
 
       router.push("/pagamento")
     } catch {
-      setSubmitError("Erro ao enviar avaliacao. Tente novamente.")
+      setSubmitError("Erro ao enviar avaliação. Tente novamente.")
     } finally {
       setIsSubmitting(false)
     }
@@ -109,7 +109,7 @@ export function AssessmentForm() {
       className="flex flex-col gap-6"
       noValidate
     >
-      {/* Email */}
+      {/* E-mail */}
       <div className="flex flex-col gap-2">
         <Label htmlFor="email">E-mail *</Label>
         <Input
@@ -204,8 +204,8 @@ export function AssessmentForm() {
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="iniciante">Iniciante (0-3 meses)</SelectItem>
-            <SelectItem value="intermediario">Intermediario (3-12 meses)</SelectItem>
-            <SelectItem value="avancado">Avancado (12+ meses)</SelectItem>
+            <SelectItem value="intermediario">Intermediário (3-12 meses)</SelectItem>
+            <SelectItem value="avancado">Avançado (12+ meses)</SelectItem>
           </SelectContent>
         </Select>
         {errors.tempoTreino && (
@@ -240,12 +240,12 @@ export function AssessmentForm() {
           className="flex flex-col gap-3"
         >
           {[
-  { value: "perder-gordura", label: "Perder gordura" },
-  { value: "ganhar-massa", label: "Ganhar massa muscular" },
-  { value: "definir-corpo", label: "Definir o corpo" },
-  { value: "ganhar-forca", label: "Ganhar força" },
-  { value: "condicionamento", label: "Melhorar condicionamento" },
-].map((option) => (
+            { value: "perder-gordura",   label: "Perder gordura" },
+            { value: "ganhar-massa",     label: "Ganhar massa muscular" },
+            { value: "definir-corpo",    label: "Definir o corpo" },
+            { value: "ganhar-forca",     label: "Ganhar força" },
+            { value: "condicionamento",  label: "Melhorar condicionamento" },
+          ].map((option) => (
             <div key={option.value} className="flex items-center gap-3">
               <RadioGroupItem value={option.value} id={`meta-${option.value}`} />
               <Label htmlFor={`meta-${option.value}`} className="cursor-pointer font-normal">
@@ -277,7 +277,7 @@ export function AssessmentForm() {
             </Link>{" "}
             e a{" "}
             <Link href="/privacidade" className="text-primary underline underline-offset-2" target="_blank">
-              Politica de Privacidade
+              Política de Privacidade
             </Link>{" "}
             *
           </Label>
@@ -295,7 +295,7 @@ export function AssessmentForm() {
             }
           />
           <Label htmlFor="aceitaEmails" className="cursor-pointer text-sm font-normal leading-relaxed">
-            Aceito receber e-mails sobre o Plano de Treino e orientacoes (opcional)
+            Aceito receber e-mails sobre o Plano de Treino e orientações (opcional)
           </Label>
         </div>
       </div>
@@ -306,7 +306,7 @@ export function AssessmentForm() {
         </div>
       )}
 
-      {/* Botoes */}
+      {/* Botões */}
       <div className="flex flex-col gap-3 sm:flex-row">
         <Button
           type="submit"
@@ -320,13 +320,13 @@ export function AssessmentForm() {
               Enviando...
             </>
           ) : (
-            "Finalizar avaliacao"
+            "Finalizar avaliação"
           )}
         </Button>
         <Button asChild variant="outline" size="lg" className="flex-1">
           <Link href="/">
             <ArrowLeft className="mr-2 size-4" />
-            Voltar a Home
+            Voltar à Home
           </Link>
         </Button>
       </div>
