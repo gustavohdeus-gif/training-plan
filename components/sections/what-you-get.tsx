@@ -7,7 +7,7 @@ const items = [
     icon: BookOpen,
     title: "Plano de Treino completo (PDF)",
     description:
-      "Guia de emagrecimento com mais de 100 paginas: treinos, dietas, dicas de rotina e motivacao.",
+      "Guia de emagrecimento com: treinos, dietas, dicas de rotina e motivacao.",
   },
   {
     icon: Table2,
@@ -38,7 +38,7 @@ export function WhatYouGetSection() {
             O que voce recebe
           </span>
           <h2 className="mt-2 font-serif text-2xl font-bold text-foreground md:text-4xl text-balance">
-            Sobre o Plano de Treino Slim360
+            Sobre o Plano de Treino Estética em Forma
           </h2>
           <p className="mt-3 text-muted-foreground">
             Tudo pensado para simplificar sua jornada de emagrecimento.
@@ -66,7 +66,7 @@ export function WhatYouGetSection() {
             <div className="relative aspect-[3/4] w-full max-w-sm overflow-hidden rounded-2xl shadow-2xl">
               <Image
                 src="/images/ebook-mockup.jpg"
-                alt="Mockup do Plano de Treino Slim360 exibido em tablet e celular"
+                alt="Mockup do Plano de Treino Estética em Forma exibido em tablet e celular"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 400px"
