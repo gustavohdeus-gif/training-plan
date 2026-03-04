@@ -8,7 +8,7 @@ const benefits = [
   },
   {
     icon: Utensils,
-    title: "Sugestoes de cardapio equilibrado",
+    title: "Sugestões de cardápio equilibrado",
     description: "Refeições práticas com substituições para o dia a dia.",
   },
   {
