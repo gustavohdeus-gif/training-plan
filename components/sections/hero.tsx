@@ -30,13 +30,13 @@ export function HeroSection() {
                 <ArrowRight className="ml-2 size-5" />
               </Link>
             </Button>
-         <Button
+  <Button
   asChild
-  variant="outline"
   size="lg"
-  className="bg-green-500 text-black border-green-600 hover:bg-green-600"
+  className="!bg-green-600 !text-black !border-green-700 hover:!bg-green-700"
 >
-  <Link href="#sobre-oer detalhes do plano
+  #sobre-o-plano
+    Ver detalhes do plano
     <ChevronDown className="ml-2 size-5" />
   </Link>
 </Button>
