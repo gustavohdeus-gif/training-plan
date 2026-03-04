@@ -6,16 +6,16 @@ const steps = [
   {
     icon: ClipboardList,
     step: "01",
-    title: "Faca a avaliacao rapida",
+    title: "Faca a Avaliação Rápida",
     description:
       "Responda algumas perguntas simples sobre seu perfil, objetivo e rotina. Leva menos de 2 minutos.",
   },
   {
     icon: Mail,
     step: "02",
-    title: "Receba as orientacoes por e-mail",
+    title: "Receba as orientações por e-mail",
     description:
-      "Ao concluir a avaliacao, enviamos um e-mail com o proximo passo para acessar seu plano.",
+      "Ao concluir a avaliação, enviamos um e-mail com o próximo passo para acessar seu plano.",
   },
   {
     icon: BookOpen,
@@ -35,10 +35,10 @@ export function HowItWorksSection() {
             Como funciona
           </span>
           <h2 className="mt-2 font-serif text-2xl font-bold text-foreground md:text-4xl text-balance">
-            Tres passos simples para comecar
+            Três passos simples para começar
           </h2>
           <p className="mt-3 text-muted-foreground">
-            O processo e rapido, seguro e totalmente online.
+            O processo é rápido, seguro e totalmente online.
           </p>
         </div>
 
@@ -67,7 +67,7 @@ export function HowItWorksSection() {
         <div className="mt-10 flex justify-center">
           <Button asChild size="lg" className="text-base font-semibold">
             <Link href="/avaliacao">
-              Iniciar avaliacao
+              Iniciar Avaliação
               <ArrowRight className="ml-2 size-5" />
             </Link>
           </Button>
