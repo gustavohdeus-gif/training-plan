@@ -4,17 +4,17 @@ const benefits = [
   {
     icon: Dumbbell,
     title: "Protocolos de treino para casa ou academia",
-    description: "Exercicios adaptaveis ao seu ambiente e nivel de experiencia.",
+    description: "Exercícios adaptáveis ao seu ambiente e nivel de experiência.",
   },
   {
     icon: Utensils,
     title: "Sugestoes de cardapio equilibrado",
-    description: "Refeicoes praticas com substituicoes para o dia a dia.",
+    description: "Refeições práticas com substituições para o dia a dia.",
   },
   {
     icon: CalendarCheck,
     title: "Rotinas semanais e checklists",
-    description: "Organização semanal para manter a constancia nos treinos.",
+    description: "Organização semanal para manter a constância nos treinos.",
   },
   {
     icon: Download,
@@ -23,13 +23,13 @@ const benefits = [
   },
   {
     icon: ShieldCheck,
-    title: "Resultados sustentaveis e seguros",
-    description: "Metodologia sem radicalismos, focada em saude e bem-estar.",
+    title: "Resultados sustentáveis e seguros",
+    description: "Metodologia sem radicalismos, focada em saúde e bem-estar.",
   },
   {
     icon: CheckCircle,
     title: "Suporte por e-mail",
-    description: "Tire suas duvidas com nossa equipe de suporte dedicada.",
+    description: "Tire suas dúvidas com nossa equipe de suporte dedicada.",
   },
 ]
 
@@ -42,7 +42,7 @@ export function BenefitsSection() {
             Beneficios
           </span>
           <h2 className="mt-2 font-serif text-2xl font-bold text-foreground md:text-4xl text-balance">
-            Tudo o que voce precisa para emagrecer de verdade
+            Tudo o que você precisa para emagrecer de verdade
           </h2>
         </div>
 
